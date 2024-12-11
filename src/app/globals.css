@@ -40,9 +40,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 75%;
+  width: 85%;
   margin: auto;
-  padding: 2rem;
   min-height: 100vh;
 }
 
