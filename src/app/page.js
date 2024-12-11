@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.imageContainer}>
-          <Image src="/hero.gif" alt="" height={500} width={500} style={{objectFit: "contain"}} className={styles.image}/>
+          <Image src="/hero.gif" alt="" fill style={{objectFit: "contain"}} className={styles.image}/>
       </div>
     </div>
   );
