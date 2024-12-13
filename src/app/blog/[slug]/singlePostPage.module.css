@@ -7,10 +7,12 @@
   position: relative;
   height: calc(100vh - 200px);
   width: 100%;
+  z-index: -1;
 }
 
 .img {
   object-fit: cover;
+  z-index: -1;
 }
 
 .textContainer {

@@ -45,10 +45,13 @@ a {
   min-height: 100vh;
 }
 
+.inner-container {
+  height: calc(100vh - 200px);
+}
+
 @media (max-width: 768px) {
   .container {
     width: 100%;
-    justify-content: flex-start;
     padding: 1rem;
   }
 }
