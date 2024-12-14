@@ -8,6 +8,16 @@
   width: 30%;
 }
 
+.button {
+  padding: 1rem;
+  min-width: 120px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: aliceblue;
+  color: black; 
+}
+
 @media screen and (max-width: 768px){
   .post {
     width: 100%;
