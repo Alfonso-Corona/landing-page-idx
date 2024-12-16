@@ -1,16 +1,21 @@
 import Image from 'next/image';
 import styles from './singlePostPage.module.css';
+import getPokemonInfo from '../../../../utils/getDesc';
 
-const SinglePostPage = ({params, searchParams}) => {
-  console.log(params);
-  console.log(searchParams);
+const SinglePostPage = async ({params}) => {
+  const slug = (await params).slug;
+
+  const flavorText = await getPokemonInfo(slug);
+
+  console.log(flavorText);
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image src='https://images.pexels.com/photos/122442/berries-blueberries-raspberries-fruit-122442.jpeg' alt='' fill className={styles.img}/>
+        <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${slug}.png`} alt='' fill className={styles.img}/>
       </div>
       <div className={styles.textCotainer}>
-        <h1 className={styles.title}>Title</h1>
+        <h1 className={styles.title}>{flavorText.name}</h1>
         <div className={styles.detail}>
           <Image src='https://images.pexels.com/photos/122442/berries-blueberries-raspberries-fruit-122442.jpeg' alt='' width={50} height={50} className={styles.avatar}/>
           <div className={styles.detailText}>
@@ -23,7 +28,7 @@ const SinglePostPage = ({params, searchParams}) => {
           </div>
         </div>
         <div className={styles.content}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos illum eaque magni quas voluptatum quasi sit qui expedita magnam doloremque non, adipisci beatae, dolorem neque delectus temporibus a omnis?
+          {flavorText.flavor_text}
         </div>
       </div>
     </div>

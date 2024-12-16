@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import { Suspense } from "react";
 
 
 const geistSans = localFont({
@@ -28,9 +29,11 @@ export default function RootLayout({ children }) {
       >
         <div className="container">
           <NavBar />
-          <div className="inner-container">
-            {children}
-          </div>
+          <Suspense>
+            <div className="inner-container">
+              {children}
+            </div>
+          </Suspense>
           <Footer/>
         </div>
       </body>

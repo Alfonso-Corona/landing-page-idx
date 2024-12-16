@@ -1,24 +1,7 @@
 import Link from 'next/link';
 import styles from './postCard.module.css';
 import Image from 'next/image';
-
-const getPokemonInfo = async (pokemon) => {
-  let pokemonInfo = pokemon.url.replace('pokemon', 'pokemon-species');
-  const res = await fetch(pokemonInfo);
-  if(!res.ok){
-    throw new Error('can not get pokemon info')
-  }
-  /* let pokemonFlavor = res.json()
-  .then((data) => {
-
-  }); */
-  return res.json()
-    .then((data) => {
-      //console.log(data);
-      let flavor = data.flavor_text_entries.filter((pokemonData)=> pokemonData.language.name === 'es');
-      return flavor[0];
-    });
-} 
+import getPokemonInfo from '../../../utils/getDesc';
 
 const PostCard = async ({pokemon, index}) => {
   const flavorText = await getPokemonInfo(pokemon);
@@ -36,7 +19,7 @@ const PostCard = async ({pokemon, index}) => {
         <p className={styles.desc}>
           {flavorText.flavor_text}
         </p>
-        <Link className={styles.link} href='/blog/post'>Read More</Link>
+        <Link className={styles.link} href={`/blog/${index}`}>Read More</Link>
       </div>
     </div>
   )
