@@ -13,13 +13,6 @@ const getData = async () => {
 
 const BlogPage = async () => {
   const post = await getData();
-  console.log(post);
-  //const [counter, setCounter] = useState(0);
-
-  /* function hanleClick() {
-    setCounter(() => counter+20); console.log(counter);
-  }
- */
   return (
     <div>
       <div className={styles.container}>

@@ -11,10 +11,7 @@ const NavigationTestPage = () => {
   const searchParams = useSearchParams();
   const q = searchParams.get("hola");
 
-  console.log(q);
-
   const handleClick = () => {
-    console.log("click");
     router.push('/');
     router.replace('/');// dont add an entry in the navigation history stack, so you cant go back to previos page
     router.refresh();//only refresh all page

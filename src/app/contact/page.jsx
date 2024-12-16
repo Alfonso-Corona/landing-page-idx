@@ -9,7 +9,6 @@ import dynamic from "next/dynamic";
 
 const ContactPage = () => {
   const q = Math.random();
-  console.log(q);
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
