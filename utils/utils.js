@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+//import mongoose from "mongoose";
+const { mongoose } = require("mongoose");
 
 const connection = {};
 
@@ -8,7 +9,8 @@ const connetcToDb = async () => {
       console.log("Using existing connection");
       return;
     }
-    const db = await mongoose.connect(process.env.MONGODB_URI);
+    const db = await mongoose.connect(process.env.MONGO);
+    console.log('pasa por aca', db);
     connection.isConnected = db.connections[0].readyState;
     console.log("New connection");
   } catch (error) {

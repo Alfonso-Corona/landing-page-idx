@@ -3,6 +3,7 @@ import connetcToDb from "./utils";
 
 export const getPosts = async () => {
   try {
+    console.log('llego aca');
     connetcToDb();
     const posts = await Post.find();
     return posts;

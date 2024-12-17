@@ -1,6 +1,7 @@
-import mongoose from "mongoose";
+//import mongoose from "mongoose";
+const { mongoose } = require("mongoose");
 
-const userSchema = new mongoose(
+const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -33,7 +34,7 @@ const userSchema = new mongoose(
   }
 );
 
-const postSchema = new mongoose(
+const postSchema = new mongoose.Schema(
   {
     title: {
       type: String,
